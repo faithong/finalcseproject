@@ -11,8 +11,8 @@ with col1:
     st.caption("There are social and economic factors that influence the rate of lung cancer in different communities. However, despite racial disparities in lung cancer, genomic level analysis of lung cancer in underserved patients of African descent remains underexplored.")
 
 # displaying data
-aa = pd.read_csv('/Users/faithong/Desktop/cse163final/data_aa.csv')
-ea = pd.read_csv('/Users/faithong/Desktop/cse163final/data_ea.csv')
+aa = pd.read_csv('data_aa.csv')
+ea = pd.read_csv('data_ea.csv')
 
 aa['Race'] = "African-American"
 ea['Race'] = "European-American"
