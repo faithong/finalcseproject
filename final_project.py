@@ -32,8 +32,19 @@ st.text("")
 
 if visualization == 'How Does the Average APA Site in African Americans Compare to that of European Americans?':
      print("apa")
+
 elif visualization == 'How does the average PSI index in African Americans compare to that of European Americans?':
-    print("psi")
+    psisheet = pd.read_csv('/home/psi_sheet.csv')
+    psisheet
+    psisheet['psi_mean'] = psisheet.mean(axis=1)
+    all_races['gene_name_class'] = all_races['gene_name'] + all_races['gene_class']
+    joined_sheets = all_races.merge(psisheet, how="inner")
+    race_psi_index = joined_sheets.groupby('Race')['psi_mean'].mean()
+    race_psi_index
+    race_psi_index = joined_sheets.groupby('Race')['psi_mean'].median()
+    race_psi_index
+    race_psi_index = joined_sheets.groupby('Race')['psi_mean'].sum()
+    race_psi_index
 elif visualization == 'Are there any commonalities between amino acid sequences among African American vs. European Americans?':
     print("commonalites")
 elif visualization == 'Length of Amino Acids':
