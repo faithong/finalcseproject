@@ -3,7 +3,6 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from collections import Counter
-import matplotlib.pyplot as plt
 
 
 col1, col2, col3 = st.columns([3, 1, 1])
