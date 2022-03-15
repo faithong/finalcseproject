@@ -4,8 +4,6 @@ import seaborn as sns
 
 
 col1, col2, col3 = st.columns([3, 1, 1])
-st.text("")
-st.text("")
 
 
 with col1:
@@ -21,7 +19,7 @@ ea['Race'] = "European-American"
 all_races = aa.merge(ea, how='outer')
 all_races = all_races.loc[:, all_races.columns != 'gene_id']
 
-visualization = st.radio(
+visualization = st.selectbox(
      "",
      ('About the Dataset',
       'How Does the Average APA Site in African Americans Compare to that of European Americans?',
