@@ -1,3 +1,7 @@
 streamlit
 pandas
 seaborn
+
+Data
+    data_aa.csv
+    data_ea.csv
