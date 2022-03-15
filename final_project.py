@@ -16,7 +16,6 @@ with col1:
 # displaying data
 aa = pd.read_csv('data_aa.csv')
 ea = pd.read_csv('data_ea.csv')
-
 aa['Race'] = "African-American"
 ea['Race'] = "European-American"
 all_races = aa.merge(ea, how='outer')
