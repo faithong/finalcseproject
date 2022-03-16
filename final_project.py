@@ -1,3 +1,11 @@
+"""
+Faith Ong, Muhammad Rahman, Sunny Ye
+CSE 163
+
+This file uses streamlit.io to create a website that visualizes how
+we have analyzed the data and answered our research questions.
+"""
+
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -50,8 +58,8 @@ if visualization == 'How Does the Average APA Site in African\
     poly_a_median = all_races.groupby('Race')['polyA_sites_in_gene'].median()
     poly_a_median
 
-elif visualization == 'How does the average PSI index in African\
-                       Americans compare to that of European Americans?':
+elif visualization == ('How does the average PSI index in African \
+                       Americans compare to that of European Americans?'):
     psisheet = pd.read_csv('psi_sheet.csv')
     psisheet
     psisheet['psi_mean'] = psisheet.mean(axis=1)
@@ -68,9 +76,9 @@ elif visualization == 'How does the average PSI index in African\
     with col6:
         race_psi_index = joined_sheets.groupby('Race')['psi_mean'].sum()
         race_psi_index
-elif visualization == 'Are there any commonalities between amino acid\
+elif visualization == ('Are there any commonalities between amino acid \
                        sequences among African American vs. European\
-                       Americans?':
+                       Americans?'):
     with open('gene_sequences_aa.txt') as f:
         gene_aa = Counter(c for line in f for c in line.strip())
     with open('gene_sequences_ea.txt') as f:
@@ -106,7 +114,7 @@ elif visualization == 'Are there any commonalities between amino acid\
     plt.ylabel('Count (n)')
     st.pyplot(fig=plt)
 
-elif visualization == 'Lenth of Amino Acids':
+elif visualization == 'Length of Amino Acids':
     # length stuff for ea
     st.header("Length Observations for European American Amino Acids")
     with open('gene_sequences_ea.txt') as f:
@@ -154,7 +162,6 @@ elif visualization == 'Lenth of Amino Acids':
         max_amino_acid
 
 elif visualization == 'About the Dataset':
-    st.subheader("Dataset")
     all_races
     st.text("")
     col4, col5, col6 = st.columns([3, 3, 3])
