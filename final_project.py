@@ -106,7 +106,7 @@ elif visualization == 'Are there any commonalities between amino acid\
     plt.ylabel('Count (n)')
     st.pyplot(fig=plt)
 
-elif visualization == 'Length of Amino Acids':
+elif visualization == 'Lenth of Amino Acids':
     # length stuff for ea
     st.header("Length Observations for European American Amino Acids")
     with open('gene_sequences_ea.txt') as f:
